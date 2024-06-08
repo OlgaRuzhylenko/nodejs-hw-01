@@ -1,6 +1,6 @@
 import { PATH_DB } from '../constants/contacts.js';
 import { createFakeContact } from '../utils/createFakeContact.js';
-import {getAllContacts} from './getAllContacts.js';
+import { getAllContacts } from './getAllContacts.js';
 import fs from 'fs/promises';
 
 export const addOneContact = async () => {

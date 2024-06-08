@@ -1,1 +1,20 @@
-[]
+[
+  {
+    "name": "Ricky Koss V",
+    "phone": "287.955.9833 x2803",
+    "email": "Bret59@hotmail.com",
+    "job": "Customer Metrics Engineer"
+  },
+  {
+    "name": "Stanley Upton",
+    "phone": "254.412.3033 x7747",
+    "email": "Shemar.Cremin66@hotmail.com",
+    "job": "Senior Accounts Director"
+  },
+  {
+    "name": "Gilberto Gerlach",
+    "phone": "267-847-3519 x952",
+    "email": "Letitia.Rippin@yahoo.com",
+    "job": "District Solutions Developer"
+  }
+]

@@ -4,6 +4,7 @@ import getAllContacts from './scripts/getAllContacts';
 import addOneContact from './scripts/addOneContact.js';
 import countContacts from './scripts/countContacts.js';
 import removeAllContacts from './scripts/removeAllContacts.js';
+import thanos from './scripts/thanos.js';
 
 const invokeAction = async ({ action, number, ...data }) => {
   switch (action) {
@@ -19,9 +20,12 @@ const invokeAction = async ({ action, number, ...data }) => {
     case 'count':
       const contactsArrLength = await countContacts();
       return console.log(contactsArrLength);
-      case 'remove':
-        const emptyArrContacts = await removeAllContacts();
-        return console.log(emptyArrContacts);
+    case 'remove':
+      const emptyArrContacts = await removeAllContacts();
+      return thanos.log(emptyArrContacts);
+    case 'thanos':
+      const updatedContacts = await thanos();
+      return console.log(updatedContacts);
   }
 };
 invokeAction({ action: 'generate' });
@@ -29,3 +33,4 @@ invokeAction({ action: 'list' });
 invokeAction({ action: 'add' });
 invokeAction({ action: 'count' });
 invokeAction({ action: 'remove' });
+invokeAction({ action: 'thanos' });

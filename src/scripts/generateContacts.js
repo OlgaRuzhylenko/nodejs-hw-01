@@ -4,20 +4,19 @@ import fs from 'fs/promises';
 
 export const generateContacts = async (number) => {
   let contactsArr = [];
-//читаємо дані із файлу json
+  //читаємо дані із файлу json
   const generatedContacts = await fs.readFile(PATH_DB, 'utf-8');
   contactsArr = JSON.parse(generatedContacts);
 
   const newContacts = [];
-    for (let i = 0; i < number; i++) {
-        newContacts.push(createFakeContact());
-    }
+  for (let i = 0; i < number; i++) {
+    newContacts.push(createFakeContact());
+  }
 
-    const updatedContacts = contactsArr.concat(newContacts);
-    //записуємо в json
-    await fs.writeFile(PATH_DB, JSON.stringify(updatedContacts))
-    return updatedContacts
+  const updatedContacts = contactsArr.concat(newContacts);
+  //записуємо в json
+  await fs.writeFile(PATH_DB, JSON.stringify(updatedContacts));
+  return updatedContacts;
 };
 
-await generateContacts(2);
-
+await generateContacts(6);
