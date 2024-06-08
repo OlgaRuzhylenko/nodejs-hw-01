@@ -2,7 +2,8 @@
 import generateContacts from './scripts/generateContacts';
 import getAllContacts from './scripts/getAllContacts';
 import addOneContact from './scripts/addOneContact.js';
-import countContacts from './scripts/countContacts.js'
+import countContacts from './scripts/countContacts.js';
+import removeAllContacts from './scripts/removeAllContacts.js';
 
 const invokeAction = async ({ action, number, ...data }) => {
   switch (action) {
@@ -15,12 +16,16 @@ const invokeAction = async ({ action, number, ...data }) => {
     case 'add':
       const newContact = await addOneContact(data);
       return console.log(newContact);
-      case 'count':
-const contactsArrLength = await countContacts()
-return console.log(contactsArrLength);
+    case 'count':
+      const contactsArrLength = await countContacts();
+      return console.log(contactsArrLength);
+      case 'remove':
+        const emptyArrContacts = await removeAllContacts();
+        return console.log(emptyArrContacts);
   }
 };
 invokeAction({ action: 'generate' });
 invokeAction({ action: 'list' });
 invokeAction({ action: 'add' });
 invokeAction({ action: 'count' });
+invokeAction({ action: 'remove' });
