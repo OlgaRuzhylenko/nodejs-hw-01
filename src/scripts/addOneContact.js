@@ -7,7 +7,7 @@ export const addOneContact = async () => {
   const contacts = await getAllContacts();
   const newContact = createFakeContact();
   contacts.push(newContact);
-  await fs.writeFile(PATH_DB, JSON.stringify(contacts));
+  await fs.writeFile(PATH_DB, JSON.stringify(contacts, null, 2));
   return newContact;
 };
 
